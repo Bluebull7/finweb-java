@@ -1,0 +1,71 @@
++-----------------------------------+
+|         FinancialEntity           |
++-----------------------------------+
+| - entityId: int                   |
+| - name: String                    |
++-----------------------------------+
+
++-----------------------------------+
+|       TransactionCategory         |
++-----------------------------------+
+| - categoryId: int                 |
+| - name: String                    |
++-----------------------------------+
+
++-----------------------------------+
+|        PersonalFinanceApplication  |
++-----------------------------------+
+| - accounts: List<Account>          |
+| - transactions: List<Transaction>  |
+| - budgets: List<Budget>            |
++-----------------------------------+
+| + addAccount(account: Account): void|
+| + removeAccount(account: Account): void|
+| + makeTransaction(transaction: Transaction): void|
+| + createBudget(budget: Budget): void|
+| + trackExpense(expense: Expense): void|
+| + generateReport(): void           |
++-----------------------------------+
+
++---------------------+
+|       Account       | vv
++---------------------+ 
+| - accountId: int    |
+| - balance: double   |
++---------------------+
+| + deposit(amount: double): void |
+| + withdraw(amount: double): void|
+| + getBalance(): double           |
++---------------------+
+
++------------------------+
+|      Transaction       |  vv
++------------------------+ 
+| - transactionId: int   |
+| - amount: double       |
+| - category: TransactionCategory|
++------------------------+
+| + getTransactionDetails(): String|
++------------------------+
+
++------------------------+
+|         Budget         |  vv
++------------------------+
+| - budgetId: int        |
+| - amountAllocated: double|
++------------------------+
+| + getRemainingAmount(): double|
+| + addExpense(expense: Expense): void|
+| + getBudgetDetails(): String |
++------------------------+
+
++------------------------+
+|         Expense        | vv
++------------------------+
+| - expenseId: int       |
+| - date: Date            |
+| - amount: double        |
+| - category: TransactionCategory|
++------------------------+
+| + getExpenseDetails(): String |
++------------------------+
