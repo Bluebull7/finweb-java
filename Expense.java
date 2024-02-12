@@ -8,7 +8,7 @@ public class Expense {
     private TransactionCategory category;
 
     public String getExpenseDetails() {
-    // implement me
+    // return string of the expense details ?
 
     }
 }

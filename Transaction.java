@@ -1,4 +1,6 @@
-public class Transaction {
+import TransactionCategory from ./TransactionCategory.java
+public class Transaction
+{
     
     private int transactionID;
     private double amount;
